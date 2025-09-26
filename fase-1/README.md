@@ -75,13 +75,13 @@ pip install pandas numpy scikit-learn matplotlib joblib
    Este paso es obligatorio para poder autenticar la descarga del dataset.
 
 4. Una vez configurado, ejecutar las celdas del notebook en orden:
-   1. Descarga y carga de datos  
-   2. Exploración preliminar  
-   3. Preprocesamiento  
-   4. Entrenamiento del modelo  
-   5. Evaluación  
-   6. Exportación del modelo (`modelo_entrenado.pkl`)  
-   7. Generación del archivo `submission.csv` con las predicciones  
+   1. Descarga y carga de datos.  
+   2. Exploración preliminar.  
+   3. Preprocesamiento.  
+   4. Entrenamiento del modelo.  
+   5. Evaluación.  
+   6. Exportación del modelo (`modelo_entrenado.pkl`).  
+   7. Generación del archivo `submission.csv` con las predicciones.  
 
 ---
 
