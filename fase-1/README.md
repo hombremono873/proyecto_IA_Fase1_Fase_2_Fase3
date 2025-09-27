@@ -75,6 +75,7 @@ pip install pandas numpy scikit-learn matplotlib joblib
    Este paso es obligatorio para poder autenticar la descarga del dataset.
 
 4. Una vez configurado, ejecutar las celdas del notebook en orden:
+   0. Asegurese de que todas las celdas de codigo  se ejecuten, para evitar fallos.
    1. Descarga y carga de datos.  
    2. Exploración preliminar.  
    3. Preprocesamiento.  
