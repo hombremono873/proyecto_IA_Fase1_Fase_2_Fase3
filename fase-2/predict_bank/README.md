@@ -87,9 +87,10 @@ docker run -it --rm predict_bank_app
 ```
 
 Despues de haber construido la imagen del docker, la aplicación queda en modo interactivo,
-Si es la primera vez que se ejecuta la aplicación ocurre lo siguiente.
-Al ejecutar el train.py se accede a la clave almacenada en json, se descarga automaticamente los datasets
+Si es la primera vez que se ejecuta la aplicación ocurre lo siguiente:
+al ejecutar el train.py se accede a la clave almacenada en json, se descarga automaticamente los datasets
 (train.csv, test.csv) almacenados en la carpeta temporal datos. Adicionalmente se genera el archivo modelo_entrenado.pkl y se ubica en la carpeta temporal datos.
+
 Al ejecutar test.csv se prueba el modelo y se genera los archivos test.txt y sumisscion.csv, que se ubicaran en la carpeta temporal datos del docker. Igualmente se imprime en consola algunos resultados de la prediccion.
 
 Entrenamiento del modelo
