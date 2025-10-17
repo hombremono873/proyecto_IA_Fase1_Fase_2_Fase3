@@ -47,22 +47,22 @@ predick_bank.
 - Sistema operativo Windows con acceso a terminal (CMD o PowerShell)
 - Proyecto organizado con la siguiente estructura:
 
-## taller_IA_fase2/ # Carpeta principal del proyecto
-## ├── datos/ # Carpeta externa para datasets y modelo entrenado
-## │ ├── train.csv # Dataset de entrenamiento (descargado desde Kaggle)
-## │ ├── test.csv # Dataset de prueba (descargado desde Kaggle)
-## │ ├── sample_submission.csv # Archivo de ejemplo de submission (Kaggle)
-## │ └── modelo_entrenado.pkl  # Modelo entrenado guardado
-## ├── predict_bank/      # Código fuente del proyecto
-## │ ├── app/             # Scripts principales
-## │ │ ├── train.py       # Script de entrenamiento del modelo
-## │ │ ├── predict.py     # Script de predicción
-## │ │ └── init.py        # (opcional) indica que es un paquete Python
-## │ ├── Dockerfile       # Configuración del contenedor Docker
-## │ ├── requirements.txt # Dependencias del proyecto
-## │ └── README.md        #  Documentación del proyecto
-## | └──kaggle.json       # Credenciales de la API de Kaggle
-## └──
+taller_IA_fase2/
+├── predict_bank/ # Carpeta principal del código fuente
+│ ├── app/ # Código de la aplicación
+│ │ ├── train.py # Script de entrenamiento del modelo
+│ │ ├── predict.py # Script de predicción
+│ │ └── init.py # (opcional) indica que es un paquete Python
+│ ├── Dockerfile # Definición del contenedor Docker
+│ ├── requirements.txt # Dependencias de Python del proyecto
+│ ├── kaggle.json # Credenciales para la API de Kaggle
+│ └── README.md # Documentación del proyecto (este archivo)
+│
+└── datos/ (temporal) # Carpeta interna dentro del contenedor
+├── train.csv # Dataset de entrenamiento descargado (Kaggle)
+├── test.csv # Dataset de prueba (Kaggle)
+├── sample_submission.csv # Archivo de ejemplo de submission (Kaggle)
+└── modelo_entrenado.pkl # Modelo entrenado generado en ejecución
 ---
 ## Ejecución del proyecto
 Construcción de la imagen Docker

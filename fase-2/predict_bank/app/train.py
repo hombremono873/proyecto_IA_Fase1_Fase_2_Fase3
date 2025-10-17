@@ -89,6 +89,7 @@ def modelo_random_forest(X_train, y_train):
 DATA_DIR = "./datos"
 
 def train_model():
+    print(" La fase de entrenamiento puede tardar unos minutos, por favor sea paciente \n")
     train_path, _, _ = ensure_kaggle_data(data_dir=DATA_DIR)  # Asegurar que los datos estén disponibles
     df_train = pd.read_csv(train_path)   # Cargar dataset de entrenamiento       
     columnas_a_eliminar = ["id", "day", "month", "duration"] # Columnas a eliminar (coherente con predict.py)
