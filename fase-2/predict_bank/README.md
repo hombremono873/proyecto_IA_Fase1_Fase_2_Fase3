@@ -63,9 +63,6 @@ predick_bank.
 ## │ └── README.md        #  Documentación del proyecto
 ## | └──kaggle.json       # Credenciales de la API de Kaggle
 ## └──
-
-
-
 ---
 ## Ejecución del proyecto
 Construcción de la imagen Docker

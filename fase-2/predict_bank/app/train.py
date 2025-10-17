@@ -1,4 +1,4 @@
-# Entrenamiento del modelo Random Forest desde cero
+# Entrenamiento del modelo Random Forest
 import pandas as pd
 import joblib
 from sklearn.preprocessing import LabelEncoder
@@ -10,9 +10,9 @@ import os
 
 # ------------------------------------------------------------------------------  
 # Carpeta de datos externa (montada en Docker en /app/datos)
-# ------------------------------------------------------------------------------  
-#DATA_DIR = "datos"
-
+# DATA_DIR = "datos"
+# la función ensure_kaggle_data(.....) es la responsable de gestionar
+# los datasets para entrenamiento en kaggle
 #------------------------------------------------------------------------------
 
 def ensure_kaggle_data(competition="playground-series-s5e8", data_dir="./datos"):
@@ -40,7 +40,9 @@ def ensure_kaggle_data(competition="playground-series-s5e8", data_dir="./datos")
 
 # ------------------------------------------------------------------------------  
 # Funciones de preprocesamiento
-# ------------------------------------------------------------------------------  
+# La función clean_df(..) es la responsable de limpiar el dataset de entrenamiento
+# ------------------------------------------------------------------------------
+  
 def clean_df(df: pd.DataFrame, cols_drop: list, flag: bool):
     df_clean = df.drop(columns=cols_drop)
 
@@ -50,6 +52,9 @@ def clean_df(df: pd.DataFrame, cols_drop: list, flag: bool):
         return X, y
     else:
         return df_clean
+#-------------------------------------------------------------------------------
+# La funcion encode_categoricals codifica las series categoricals a numeros
+#-------------------------------------------------------------------------------
 
 def encode_categoricals(X):
     X_encoded = X.copy()

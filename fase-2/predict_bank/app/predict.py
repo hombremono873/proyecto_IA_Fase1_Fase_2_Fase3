@@ -9,16 +9,26 @@ import os
 # ------------------------------------------------------------------------------  
 DATA_DIR = "datos"   # /app/datos si tu WORKDIR es /app
 
-# ------------------------------------------------------------------------------  
+# ------------------------------------------------------------------------------ 
+# ------------------------------------------------------------------------------
+# la funcion load_dataset(..) carga los archivos de los datasets *.csv y 
+# retorna el dataframe.
+#-------------------------------------------------------------------------------
 def load_dataset(path: str) -> pd.DataFrame:
     return pd.read_csv(path)
 
+#-------------------------------------------------------------------------------
+# la funcion load_model(...) retorna el modelo entrenado
+#-------------------------------------------------------------------------------
 def load_model(path: str):
     return joblib.load(path)
 
-# ------------------------------------------------------------------------------  
+# ------------------------------------------------------------------------------
+# la funcion clean_df(..) elimina columnas o series en el dataframe que no son 
+# relevantes para el entrenamiento del modelo.   
+#-------------------------------------------------------------------------------
+ 
 def clean_df(df: pd.DataFrame, cols_drop: list, flag: bool):
-    #df_clean = df.drop(columns=cols_drop)
     df_clean = df.drop(columns=cols_drop, errors="ignore")
     if flag:
         y = df_clean["y"]
@@ -26,6 +36,10 @@ def clean_df(df: pd.DataFrame, cols_drop: list, flag: bool):
         return X, y
     else:
         return df_clean
+#-------------------------------------------------------------------------------
+# La función encode_categoricals(....) codifica las columnas categoricas a 
+# numeros.
+#-------------------------------------------------------------------------------
 
 def encode_categoricals(X):
     X_encoded = X.copy()
@@ -34,7 +48,9 @@ def encode_categoricals(X):
         X_encoded[col] = le.fit_transform(X_encoded[col])
     return X_encoded
 
-# ------------------------------------------------------------------------------  
+# ------------------------------------------------------------------------------
+# la funcion_predict_datos_test(....) solicita predicciones al modelo 
+#-------------------------------------------------------------------------------  
 def predict_datos_test(modelo, X_test_num):
     y_pred  = modelo.predict(X_test_num)
     y_proba = modelo.predict_proba(X_test_num)[:, 1]
@@ -47,6 +63,10 @@ def generar_submission111(y_pred, ids, ruta_salida="datos/predicciones.txt"):
     os.makedirs(os.path.dirname(ruta_salida) or ".", exist_ok=True)
     submission.to_csv(ruta_salida, index=False)
     return submission
+#-------------------------------------------------------------------------------
+# La funcion generar_submission(....) construye un archivo con el resultado de 
+# las predicciones y lo almacena en la carpeta temporal datos dentro del docker
+#-------------------------------------------------------------------------------
 
 def generar_submission(y_pred, ids, ruta_salida="/app/datos/predict.csv"):
     os.makedirs(os.path.dirname(ruta_salida) or ".", exist_ok=True)
@@ -55,7 +75,10 @@ def generar_submission(y_pred, ids, ruta_salida="/app/datos/predict.csv"):
     print(f"Archivo de submission generado en: {ruta_salida}")
     return submission
 
-# ------------------------------------------------------------------------------  
+# ------------------------------------------------------------------------------
+# la función ejecutar_flujo_prediccion(...) es la responsable de ejecutar todo el
+# codigo para ejecutar predicciones.
+#-------------------------------------------------------------------------------  
 def ejecutar_flujo_prediccion(
     ruta_modelo: str = os.path.join(DATA_DIR, "modelo_entrenado.pkl"),
     ruta_test: str = os.path.join(DATA_DIR, "test.csv"),
@@ -89,6 +112,8 @@ def ejecutar_flujo_prediccion(
     # Mostrar primeras predicciones
     for i in range(min(5, len(ids))):
         print(f"id={ids[i]}, y_pred={y_pred[i]}")
-
+#-------------------------------------------------------------------------------
+# El codigo lanza o ejecuta la funcion que maneja el flujo de predicción
+#-------------------------------------------------------------------------------
 if __name__ == "__main__":
     ejecutar_flujo_prediccion()
