@@ -1,0 +1,12 @@
+__pycache__/  
+*.pyc  
+*.pyo  
+.env  
+*.log  
+.vscode/  
+.git/  
+*.csv 
+# Evitar datos y modelos
+datos/  
+*.csv  
+*.pkl  
