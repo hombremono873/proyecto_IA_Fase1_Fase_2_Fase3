@@ -46,7 +46,7 @@ predick_bank.
 - Docker Desktop instalado y ejecutándose
 - Sistema operativo Windows con acceso a terminal (CMD o PowerShell)
 - Proyecto organizado con la siguiente estructura:
-
+```text
 taller_IA_fase2/
 ├── predict_bank/ # Carpeta principal del código fuente
 │ ├── app/ # Código de la aplicación
@@ -63,6 +63,8 @@ taller_IA_fase2/
 ├── test.csv # Dataset de prueba (Kaggle)
 ├── sample_submission.csv # Archivo de ejemplo de submission (Kaggle)
 └── modelo_entrenado.pkl # Modelo entrenado generado en ejecución
+---
+```
 ---
 ## Ejecución del proyecto
 Construcción de la imagen Docker
