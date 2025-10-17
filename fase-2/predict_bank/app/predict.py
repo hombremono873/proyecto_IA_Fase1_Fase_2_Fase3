@@ -83,9 +83,13 @@ def ejecutar_flujo_prediccion(
     ruta_modelo: str = os.path.join(DATA_DIR, "modelo_entrenado.pkl"),
     ruta_test: str = os.path.join(DATA_DIR, "test.csv"),
     ruta_salida: str = os.path.join(DATA_DIR, "predicciones.txt")
-):
+): 
+    print(
+    "El proceso de predicciones para probar el modelo puede tardar unos segundos, "
+    "por favor sea paciente.\n"
+   )
     columnas_a_eliminar = ["id", "day", "month", "duration"]
-
+     
     modelo = load_model(ruta_modelo)
     df_test = load_dataset(ruta_test)
     ids = df_test["id"]

@@ -4,7 +4,7 @@ FROM python:3.11-slim
 # Capa directorio de trabajo
 WORKDIR /app
 
-# capa instalar utilidades necesarias para Kaggle
+# Capa instalar utilidades necesarias para Kaggle
 RUN apt-get update && apt-get install -y --no-install-recommends \
     unzip curl && \
     rm -rf /var/lib/apt/lists/*

@@ -36,7 +36,9 @@ https://www.kaggle.com/competitions/playground-series-s5e8/data
 ```
 El profesor debe obtener un token de acceso "kaggle.json" para acceder a los datasets 
 train.csv, test.csv.
-Debe ubicarse el archivo kaggle.json a la misma altura del archivo Dockerfile dentro de la carpeta,
+
+## Nota muy importante
+Debe ubicarse, el archivo kaggle.json a la misma altura del archivo Dockerfile dentro de la carpeta,
 predick_bank.
 
 ---
@@ -152,7 +154,9 @@ root@977914e97cec:/app#
  # Elimna contenedores detenidos
  C:\cualquier ruta>docker container prune
  # Elimina todas las imagenes 
-  C:\cualquier ruta>docker image prune -a
+ C:\cualquier ruta>docker images 
+ C:\cualquier ruta>docker image prune -a
+  
 
 ```
 
@@ -183,10 +187,11 @@ docker cp ad38969d1f09:/app/datos/modelo_entrenado.pkl "C:\Users\OMAR TORRES\Dow
 ## En caso de consulta contactar a:
 Omar Alberto Torres
 tel: 3043440112
-Correo: omar.torresm@udea.edu.co
+Correo: omara.torres@udea.edu.co
 
 Nota: En caso de requerir orientación adicional sobre la ejecución o los detalles técnicos del proyecto, puede contactarme al correo institucional o revisar los comentarios en el código fuente.
 
+---
 
 
 
