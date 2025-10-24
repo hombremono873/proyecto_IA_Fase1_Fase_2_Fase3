@@ -25,9 +25,9 @@ def load_model(path: str):
 
 # ------------------------------------------------------------------------------
 # la funcion clean_df(..) elimina columnas o series en el dataframe que no son 
-# relevantes para el entrenamiento del modelo.   
+# relevantes para el entrenamiento del modelo.
 #-------------------------------------------------------------------------------
- 
+
 def clean_df(df: pd.DataFrame, cols_drop: list, flag: bool):
     df_clean = df.drop(columns=cols_drop, errors="ignore")
     if flag:
@@ -56,13 +56,6 @@ def predict_datos_test(modelo, X_test_num):
     y_proba = modelo.predict_proba(X_test_num)[:, 1]
     return y_pred, y_proba
 
-# ------------------------------------------------------------------------------  
-# >>> NO SE ELIMINA NINGUNA FUNCIÓN <<<
-def generar_submission111(y_pred, ids, ruta_salida="datos/predicciones.txt"):
-    submission = pd.DataFrame({"id": ids, "y": y_pred})
-    os.makedirs(os.path.dirname(ruta_salida) or ".", exist_ok=True)
-    submission.to_csv(ruta_salida, index=False)
-    return submission
 #-------------------------------------------------------------------------------
 # La funcion generar_submission(....) construye un archivo con el resultado de 
 # las predicciones y lo almacena en la carpeta temporal datos dentro del docker

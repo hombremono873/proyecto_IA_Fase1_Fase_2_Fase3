@@ -97,7 +97,8 @@ al ejecutar el train.py se accede a la clave almacenada en json, se descarga aut
 
 Al ejecutar test.csv se prueba el modelo y se genera los archivos test.txt y sumisscion.csv, que se ubicaran en la carpeta temporal datos del docker. Igualmente se imprime en consola algunos resultados de la prediccion.
 
-Entrenamiento del modelo
+Entrenamiento del modelo 
+
 # Entrenamiento del modelo
 ## Ejecutar predict.py
 ```bash
@@ -165,6 +166,14 @@ root@977914e97cec:/app#
 Los archivos modelo_entrenado.pkl, predicciones.txt, predict.csv quedan en la carpeta temporal datos
 pueden ser leidos asi: 
 
+Al ejecutar el comando 
+root@4f0889525bcf:/app# cd datos
+root@4f0889525bcf:/app/datos# dir
+
+se observa: 
+modelo_entrenado.pkl  playground-series-s5e8.zip  predicciones.txt  predict.csv  sample_submission.csv  test.csv  train.csv
+
+
 ```bash
 root@6cd540dc7299:/app/datos# head -n 10 /app/datos/predict.csv
 root@6cd540dc7299:/app/datos# head -n 10 /app/datos/predicciones.txt
@@ -183,8 +192,15 @@ docker cp ad38969d1f09:/app/datos/predict.csv "C:\Users\OMAR TORRES\Downloads\pr
 docker cp ad38969d1f09:/app/datos/predicciones.txt "C:\Users\OMAR TORRES\Downloads\predicciones.txt"
 docker cp ad38969d1f09:/app/datos/modelo_entrenado.pkl "C:\Users\OMAR TORRES\Downloads\modelo_entrenado.pkl"
 ```
+---
+## Eliminar imagenes
+```bash
+for /F "tokens=*" %i in ('docker images -q') do docker rmi -f %i
+```
+---
 
 ## En caso de consulta contactar a:
+
 Omar Alberto Torres
 tel: 3043440112
 Correo: omara.torres@udea.edu.co
