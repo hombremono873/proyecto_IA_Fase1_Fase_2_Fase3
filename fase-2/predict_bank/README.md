@@ -167,9 +167,10 @@ Los archivos modelo_entrenado.pkl, predicciones.txt, predict.csv quedan en la ca
 pueden ser leidos asi: 
 
 Al ejecutar el comando 
+```bash
 root@4f0889525bcf:/app# cd datos
 root@4f0889525bcf:/app/datos# dir
-
+```
 se observa: 
 modelo_entrenado.pkl  playground-series-s5e8.zip  predicciones.txt  predict.csv  sample_submission.csv  test.csv  train.csv
 
