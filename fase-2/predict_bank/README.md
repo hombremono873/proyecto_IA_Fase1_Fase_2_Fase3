@@ -103,8 +103,6 @@ Si es la primera vez que se ejecuta la aplicación ocurre lo siguiente:
 
 - Posteriormente, al ejecutar el script de prueba (predict.py) se evalúa el modelo utilizando del archivo test.csv . Como  resultado final se generan los archivos test.txt y submission.csv, que se almacenaran en la carpeta temporal datos/ del contenedor docker. Asimismo, en la consola se muestranalgunos resultados de la prediccion durante la prueba.
 
-Entrenamiento del modelo 
-
 # Entrenamiento del modelo
 ## Ejecutar predict.py
 ```bash
@@ -130,18 +128,20 @@ root@4820ed2101ab:/app# python train.py
    root@977914e97cec:/app#
  
 ## Ejecutando predicciones con el archivo test.csv
- El siguiente comando ejecuta las predicciones, al finalizar se descarga en la carpata temporal datos el archivo predicciones.txt
+ El siguiente comando ejecuta las predicciones. 
+ Al finalizar, se genera el archivo 'predicciones.txt', que se descarga automáticamente en la carpeta temporal 'datos/'.
 
 # Ejecutar predict.py
 ```bash
 root@4820ed2101ab:/app# python predict.py
 ```
-Despues de ejecutar el comando anterior, ademas de guardarse el archivo con las predicciones se
-puede apreciar la siguiente información en consola:
+Despues de ejecutar el comando anterior, además de guardarse el archivo con las predicciones se puede observar la siguiente salida en consola:
 
 root@977914e97cec:/app# python predict.py
+
 Predicciones guardadas en archivo de texto: datos/predicciones.txt
 Archivo de submission generado en: /app/datos/predict.csv
+
 id=750000, y_pred=0
 id=750001, y_pred=0
 id=750002, y_pred=0
@@ -169,29 +169,43 @@ root@977914e97cec:/app#
 
 # Gestion de archivos generados
 
-Los archivos modelo_entrenado.pkl, predicciones.txt, predict.csv quedan en la carpeta temporal datos
-pueden ser leidos asi: 
-
-Al ejecutar el comando 
+Los archivos 'modelo_entrenado.pkl', 'predicciones.txt', '*.csv' se almacenan en la carpeta temporal 'datos/'
+Estos archivos pueden ser leidos odescargados directamente desde el contenedor.
+Por ejemplo, alejecutar los siguientes comandos:
 ```bash
 root@4f0889525bcf:/app# cd datos
 root@4f0889525bcf:/app/datos# dir
 ```
-se observa: 
-modelo_entrenado.pkl  playground-series-s5e8.zip  predicciones.txt  predict.csv  sample_submission.csv  test.csv  train.csv
+Despues de ejecutar los comandoa anteriores podemos observar el contenido de la carpeta 'datos/'.
 
+- modelo_entrenado.pkl  
+- playground-series-s5e8.zip  
+- predicciones.txt  
+- predict.csv  
+- sample_submission.csv  
+- test.csv  
+- train.csv
+
+# Inspeccion rápida de resultados
+Si desean revisar una muestra del contenido de los archivos generados, pueden usar el comando 'head'.
+Este comando muestra las primeras líneas de un archivo de texto directamente en la consola.
+
+Por ejemplo:
 
 ```bash
 root@6cd540dc7299:/app/datos# head -n 10 /app/datos/predict.csv
 root@6cd540dc7299:/app/datos# head -n 10 /app/datos/predicciones.txt
 
 ```
-# Descarga a mi pc los archivos
-Teniendo corriendo el docker abra otra consola y ejecute el comando docker ps para obtener el id del docker
-**Nota** las rutas y ID dependen de tu equipo, solo muestro un ejemplo de como lo hice en el mío"
+# Descarga de los archivos a mi pc
+
+Con el contenedor Docker en ejecución abre **otra consola** y ejecute el comando para obtener el ID del contenedor activo:
+
+**Nota** las rutas  ID varían segun tu equipo. A continuación se muestra un ejemplo de como realizar la descarga en Windows.
 
 **Formato**
 docker cp <ID_CONTENEDOR>:/app/datos/predict.csv "C:\Users\OMAR\Downloads\predict.csv"
+
 ```bash
 docker ps
 Obtuve por ID "ad38969d1f09"
@@ -208,11 +222,13 @@ for /F "tokens=*" %i in ('docker images -q') do docker rmi -f %i
 
 ## En caso de consulta contactar a:
 
-Omar Alberto Torres
-tel: 3043440112
-Correo: omara.torres@udea.edu.co
+**Omar Alberto Torres**
+**Tel:** [+57 304 344 0112](tel:+573043440112)
 
-Nota: En caso de requerir orientación adicional sobre la ejecución o los detalles técnicos del proyecto, puede contactarme al correo institucional o revisar los comentarios en el código fuente.
+**Correo:** [omara.torres@udea.edu.co](mailto:omara.torres@udea.edu.co)
+
+>**Nota:** Si necesitan información adicional sobre la ejecución o detalles técnicos del proyecto, escribemen al correo institucional.
+> Tambien pueden revisar los comentarios en el código fuente para aclaraciones rápidas.
 
 ---
 
