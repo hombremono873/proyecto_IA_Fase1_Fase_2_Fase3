@@ -17,8 +17,10 @@ Noviembre 2 2025
 
 ## Descripción del proyecto
 
-Este proyecto implementa un modelo de Machine Learning en Python para predecir el resultado de ciertas actividades bancarias.  
-El modelo y el flujo de predicción se ejecutan dentro de un contenedor Docker, lo cual garantiza un entorno limpio y reproducible.
+Este proyecto implementa un modelo de Machine Learning en Python para predecir el resultado de determinadas actividades bancarias.  
+El modelo y el flujo de predicción se ejecutan dentro de un contenedor Docker, lo que garantiza un entorno limpio, controlado y reproducible. 
+El codigo esta diseñado para ejecutarse en modo interactivo y ofrece dos operaciones principales: entrenar el modelo y probar el modelo. 
+Adicionalmente, los archivos de entrenamiento, prueba y el modelo entrenado se almacenan en la carpeta temporal datos/, lo que facilita su gestión y reutilización.
 
 ## Nota 1
 El profesor debe descargar el repositorio ubicado en la siguiente dirección
@@ -48,6 +50,7 @@ predick_bank.
 - Docker Desktop instalado y ejecutándose
 - Sistema operativo Windows con acceso a terminal (CMD o PowerShell)
 - Proyecto organizado con la siguiente estructura:
+
 ```text
 taller_IA_fase2/
 ├── predict_bank/ # Carpeta principal del código fuente
@@ -90,12 +93,15 @@ docker run -it --rm predict_bank_app
 
 ```
 
-Despues de haber construido la imagen del docker, la aplicación queda en modo interactivo,
-Si es la primera vez que se ejecuta la aplicación ocurre lo siguiente:
-al ejecutar el train.py se accede a la clave almacenada en json, se descarga automaticamente los datasets
-(train.csv, test.csv) almacenados en la carpeta temporal datos. Adicionalmente se genera el archivo modelo_entrenado.pkl y se ubica en la carpeta temporal datos.
+Despues de haber construido la imagen del docker, la aplicación queda en modo interactivo.
 
-Al ejecutar test.csv se prueba el modelo y se genera los archivos test.txt y sumisscion.csv, que se ubicaran en la carpeta temporal datos del docker. Igualmente se imprime en consola algunos resultados de la prediccion.
+Si es la primera vez que se ejecuta la aplicación ocurre lo siguiente:
+- Al ejecutar el train.py se accede a la   clave almacenada en json, se descarga automaticamente los datasets
+(train.csv, test.csv) que se guardan en la carpeta temporal datos datos/. 
+
+- Adicionalmente se genera el archivo  modelo_entrenado.pkl y se ubica en la carpeta temporal datos/.
+
+- Posteriormente, al ejecutar el script de prueba (predict.py) se evalúa el modelo utilizando del archivo test.csv . Como  resultado final se generan los archivos test.txt y submission.csv, que se almacenaran en la carpeta temporal datos/ del contenedor docker. Asimismo, en la consola se muestranalgunos resultados de la prediccion durante la prueba.
 
 Entrenamiento del modelo 
 
