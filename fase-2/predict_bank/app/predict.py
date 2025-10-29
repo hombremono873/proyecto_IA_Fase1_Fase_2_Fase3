@@ -91,7 +91,7 @@ def ejecutar_flujo_prediccion(
 
     y_pred, _ = predict_datos_test(modelo, X_test_encoded)
 
-    # Guardar TXT (como lo tenías)
+    # Se guarda *.txt
     os.makedirs(os.path.dirname(ruta_salida) or ".", exist_ok=True)
     if ruta_salida.endswith(".txt"):
         with open(ruta_salida, "w") as f:
@@ -103,7 +103,7 @@ def ejecutar_flujo_prediccion(
         pd.DataFrame({"id": ids, "y": y_pred}).to_csv(ruta_salida, index=False)
         print(f"Predicciones guardadas en archivo CSV: {ruta_salida}")
 
-    #  Además, generar SIEMPRE el CSV oficial en /app/datos/predict.csv
+    #  Además, generar siempre el CSV oficial en /app/datos/predict.csv
     generar_submission(y_pred, ids, ruta_salida="/app/datos/predict.csv")
 
     # Mostrar primeras predicciones

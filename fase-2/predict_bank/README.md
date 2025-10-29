@@ -161,7 +161,7 @@ root@977914e97cec:/app#
  # Elimna contenedores detenidos
  C:\cualquier ruta>docker container prune
  # Elimina todas las imagenes 
- C:\cualquier ruta>docker images 
+ C:\cualquier ruta>docker system -a 
  C:\cualquier ruta>docker image prune -a
   
 
