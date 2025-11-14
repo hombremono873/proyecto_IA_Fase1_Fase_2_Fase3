@@ -219,7 +219,15 @@ docker cp ad38969d1f09:/app/datos/modelo_entrenado.pkl "C:\Users\OMAR TORRES\Dow
 for /F "tokens=*" %i in ('docker images -q') do docker rmi -f %i
 ```
 ---
+Creando el ejecutable
+- Activar el entorno virtual
+- Ubicarse en la carpeta principal del proyecto
+- Ejecutar : 
+```bash
+pip install pyinstaller
+pyinstaller --onefile main.py
 
+```
 ## En caso de consulta contactar a:
 
 **Omar Alberto Torres**

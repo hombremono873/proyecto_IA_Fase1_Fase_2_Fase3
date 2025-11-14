@@ -1,0 +1,93 @@
+{
+  "age": 42,
+  "job": "admin.",
+  "marital": "married",
+  "education": "secondary",
+  "default": "no",
+  "balance": 500,
+  "housing": "yes",
+  "loan": "no",
+  "contact": "cellular",
+  "campaign": 1,
+  "pdays": 999,
+  "previous": 0,
+  "poutcome": "unknown"
+}
+
+[
+  {
+    "age": 30,
+    "job": "student",
+    "marital": "single",
+    "education": "tertiary",
+    "default": "no",
+    "balance": 1200,
+    "housing": "no",
+    "loan": "no",
+    "contact": "cellular",
+    "campaign": 2,
+    "pdays": 999,
+    "previous": 0,
+    "poutcome": "unknown"
+  },
+  {
+    "age": 54,
+    "job": "blue-collar",
+    "marital": "married",
+    "education": "primary",
+    "default": "no",
+    "balance": -50,
+    "housing": "yes",
+    "loan": "yes",
+    "contact": "telephone",
+    "campaign": 3,
+    "pdays": 999,
+    "previous": 0,
+    "poutcome": "unknown"
+  },
+  {
+    "age": 41,
+    "job": "technician",
+    "marital": "divorced",
+    "education": "secondary",
+    "default": "no",
+    "balance": 800,
+    "housing": "yes",
+    "loan": "no",
+    "contact": "cellular",
+    "campaign": 1,
+    "pdays": 6,
+    "previous": 2,
+    "poutcome": "success"
+  },
+  {
+    "age": 63,
+    "job": "retired",
+    "marital": "married",
+    "education": "primary",
+    "default": "no",
+    "balance": 2500,
+    "housing": "no",
+    "loan": "no",
+    "contact": "cellular",
+    "campaign": 1,
+    "pdays": 999,
+    "previous": 0,
+    "poutcome": "unknown"
+  },
+  {
+    "age": 27,
+    "job": "services",
+    "marital": "single",
+    "education": "secondary",
+    "default": "no",
+    "balance": 350,
+    "housing": "yes",
+    "loan": "no",
+    "contact": "cellular",
+    "campaign": 4,
+    "pdays": 999,
+    "previous": 0,
+    "poutcome": "unknown"
+  }
+]

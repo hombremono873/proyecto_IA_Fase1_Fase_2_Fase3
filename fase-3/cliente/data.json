@@ -1,0 +1,16 @@
+{
+  "age": 42,
+  "job": "admin.",
+  "marital": "married",
+  "education": "secondary",
+  "default": "no",
+  "balance": 500,
+  "housing": "yes",
+  "loan": "no",
+  "contact": "cellular",
+  "campaign": 1,
+  "pdays": 999,
+  "previous": 0,
+  "poutcome": "unknown"
+}
+

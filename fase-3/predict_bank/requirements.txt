@@ -1,0 +1,24 @@
+# === Dependencias core para ML (entrenar y predecir) ===
+joblib==1.5.2
+numpy==2.3.2
+pandas==2.3.2
+python-dateutil==2.9.0.post0
+pytz==2025.2
+scikit-learn==1.7.1
+scipy==1.16.1
+six==1.17.0
+threadpoolctl==3.6.0
+tzdata==2025.2
+kaggle==1.6.14
+
+# === Dependencias para Flask / API (usadas en entrega 3) ===
+blinker==1.9.0
+click==8.2.1
+colorama==0.4.6
+Flask==3.1.2
+itsdangerous==2.2.0
+Jinja2==3.1.6
+MarkupSafe==3.0.2
+Werkzeug==3.1.3
+
+
