@@ -160,10 +160,11 @@ Seleccione una opción: 4
 2: Permite que el usuario digite los campos de entrada y se retorna la predicción.
 
 Seleccione una opción: 5
+
 ## Sale esto 
 Saliendo del cliente...
 
-# Gestion
+# Gestion de imagenes
 Ver imagenes
 
 docker ps -a
