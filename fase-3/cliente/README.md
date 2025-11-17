@@ -161,7 +161,7 @@ Seleccione una opción: 4
 
 Seleccione una opción: 5
 
-## Sale esto 
+## Sale  el siguiente mensaje  
 Saliendo del cliente...
 
 # Gestion de imagenes
