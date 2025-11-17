@@ -156,7 +156,7 @@ def menu():
         print("1. Entrenar modelo ")
         print("2. Predecir usando test.csv para probar el modelo ")
         print("3. Predecir registro individual, entrada previamente configurada en json ")
-        print("4. Predecir , entrada dinámica (usuario digita datos de entrada ")
+        print("4. Predecir , entrada dinámica (usuario digita datos de entrada) ")
         print("5. Salir ")
 
         opcion = input("Seleccione una opción: ")
